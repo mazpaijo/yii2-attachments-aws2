@@ -4,6 +4,7 @@ namespace mazpaijo\attachmentsAws2\components;
 
 use mazpaijo\attachmentsAws2\behaviors\FileBehavior;
 use mazpaijo\attachmentsAws2\ModuleTrait;
+use mazpaijo\attachmentsAws2\models\File;
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\bootstrap\Widget;
