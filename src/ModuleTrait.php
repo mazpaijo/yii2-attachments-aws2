@@ -1,6 +1,6 @@
 <?php
 
-namespace mazpaijo\attachmentsAws;
+namespace mazpaijo\attachmentsAws2;
 
 /**
  * Created by PhpStorm.

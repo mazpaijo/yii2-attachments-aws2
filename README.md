@@ -1,11 +1,11 @@
 Yii2 attachments-aws
 ================
-[![Latest Stable Version](https://poser.pugx.org/mazpaijo/yii2-attachments-aws/v/stable)](https://packagist.org/packages/mazpaijo/yii2-attachments-aws)
-[![License](https://poser.pugx.org/mazpaijo/yii2-attachments-aws/license)](https://packagist.org/packages/mazpaijo/yii2-attachments-aws)
-[![Build Status](https://scrutinizer-ci.com/g/mazpaijo/yii2-attachments-aws/badges/build.png?b=tests)](https://scrutinizer-ci.com/g/mazpaijo/yii2-attachments-aws/build-status/tests)
-[![Code Coverage](https://scrutinizer-ci.com/g/mazpaijo/yii2-attachments-aws/badges/coverage.png?b=tests)](https://scrutinizer-ci.com/g/mazpaijo/yii2-attachments-aws/?branch=tests)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mazpaijo/yii2-attachments-aws/badges/quality-score.png?b=tests)](https://scrutinizer-ci.com/g/mazpaijo/yii2-attachments-aws/?branch=tests)
-[![Total Downloads](https://poser.pugx.org/mazpaijo/yii2-attachments-aws/downloads)](https://packagist.org/packages/mazpaijo/yii2-attachments-aws)
+[![Latest Stable Version](https://poser.pugx.org/mazpaijo/yii2-attachments-aws2/v/stable)](https://packagist.org/packages/mazpaijo/yii2-attachments-aws2)
+[![License](https://poser.pugx.org/mazpaijo/yii2-attachments-aws2/license)](https://packagist.org/packages/mazpaijo/yii2-attachments-aws2)
+[![Build Status](https://scrutinizer-ci.com/g/mazpaijo/yii2-attachments-aws2/badges/build.png?b=tests)](https://scrutinizer-ci.com/g/mazpaijo/yii2-attachments-aws2/build-status/tests)
+[![Code Coverage](https://scrutinizer-ci.com/g/mazpaijo/yii2-attachments-aws2/badges/coverage.png?b=tests)](https://scrutinizer-ci.com/g/mazpaijo/yii2-attachments-aws2/?branch=tests)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mazpaijo/yii2-attachments-aws2/badges/quality-score.png?b=tests)](https://scrutinizer-ci.com/g/mazpaijo/yii2-attachments-aws2/?branch=tests)
+[![Total Downloads](https://poser.pugx.org/mazpaijo/yii2-attachments-aws2/downloads)](https://packagist.org/packages/mazpaijo/yii2-attachments-aws2)
 
 Extension for file uploading and attaching to the models
 
@@ -21,13 +21,13 @@ Installation
 	Either run
 	
 	```
-	php composer.phar require mazpaijo/yii2-attachments-aws "~1.0.0"
+	php composer.phar require mazpaijo/yii2-attachments-aws2 "~1.0.0"
 	```
 	
 	or add
 	
 	```
-	"mazpaijo/yii2-attachments-aws": "~1.0.0"
+	"mazpaijo/yii2-attachments-aws2": "~1.0.0"
 	```
 	
 	to the require section of your `composer.json` file.
@@ -38,7 +38,7 @@ Installation
 	'modules' => [
 		...
 		'attachments-aws' => [
-			'class' => mazpaijo\attachmentsAws\Module::className(),
+			'class' => mazpaijo\attachmentsAws2\Module::className(),
 			'tempPath' => '@app/uploads/temp',
 			'storePath' => '@app/uploads/store',
 			'rules' => [ // Rules according to the FileValidator
@@ -61,7 +61,7 @@ Installation
 		'migrate' => [
 			'class' => 'yii\console\controllers\MigrateController',
 			'migrationNamespaces' => [
-				'mazpaijo\attachmentsAws\migrations',
+				'mazpaijo\attachmentsAws2\migrations',
 			],
 		],
 		...
@@ -80,7 +80,7 @@ Installation
 		return [
 			...
 			'fileBehavior' => [
-				'class' => \mazpaijo\attachmentsAws\behaviors\FileBehavior::className()
+				'class' => \mazpaijo\attachmentsAws2\behaviors\FileBehavior::className()
 			]
 			...
 		];
@@ -97,7 +97,7 @@ Usage
 1. In the `form.php` of your model add file input
 	
 	```php
-	<?= \mazpaijo\attachmentsAws\components\AttachmentsInput::widget([
+	<?= \mazpaijo\attachmentsAws2\components\AttachmentsInput::widget([
 		'id' => 'file-input', // Optional
 		'model' => $model,
 		'options' => [ // Options of the Kartik's FileInput widget
@@ -112,7 +112,7 @@ Usage
 2. Use widget to show all attachments-aws of the model in the `view.php`
 	
 	```php
-	<?= \mazpaijo\attachmentsAws\components\AttachmentsTable::widget(['model' => $model]) ?>
+	<?= \mazpaijo\attachmentsAws2\components\AttachmentsTable::widget(['model' => $model]) ?>
 	```
 
 3. (Deprecated) Add onclick action to your submit button that uploads all files before submitting form

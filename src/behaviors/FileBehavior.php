@@ -6,10 +6,10 @@
  * Time: 12:24
  */
 
-namespace mazpaijo\attachmentsAws\behaviors;
+namespace mazpaijo\attachmentsAws2\behaviors;
 
-use mazpaijo\attachmentsAws\models\File;
-use mazpaijo\attachmentsAws\ModuleTrait;
+use mazpaijo\attachmentsAws2\models\File;
+use mazpaijo\attachmentsAws2\ModuleTrait;
 use yii\base\Behavior;
 use yii\db\ActiveRecord;
 use yii\helpers\FileHelper;
@@ -82,7 +82,7 @@ class FileBehavior extends Behavior
         $userTempDir = $this->getModule()->getUserDirPath();
         foreach (FileHelper::findFiles($userTempDir) as $file) {
             if (substr(FileHelper::getMimeType($file), 0, 5) === 'image') {
-                $initialPreview[] = Html::img(['/attachmentsAws/file/download-temp', 'filename' => basename($file)], ['class' => 'file-preview-image']);
+                $initialPreview[] = Html::img(['/attachmentsAws2/file/download-temp', 'filename' => basename($file)], ['class' => 'file-preview-image']);
             } else {
                 $initialPreview[] = Html::beginTag('div', ['class' => 'file-preview-other']) .
                     Html::beginTag('h2') .
@@ -116,7 +116,7 @@ class FileBehavior extends Behavior
             $filename = basename($file);
             $initialPreviewConfig[] = [
                 'caption' => $filename,
-                'url' => Url::to(['/attachmentsAws/file/delete-temp',
+                'url' => Url::to(['/attachmentsAws2/file/delete-temp',
                     'filename' => $filename
                 ]),
             ];
@@ -125,7 +125,7 @@ class FileBehavior extends Behavior
         foreach ($this->getFiles() as $index => $file) {
             $initialPreviewConfig[] = [
                 'caption' => "$file->name.$file->type",
-                'url' => Url::toRoute(['/attachmentsAws/file/delete',
+                'url' => Url::toRoute(['/attachmentsAws2/file/delete',
                     'id' => $file->id
                 ]),
             ];

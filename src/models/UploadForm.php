@@ -1,8 +1,8 @@
 <?php
 
-namespace mazpaijo\attachmentsAws\models;
+namespace mazpaijo\attachmentsAws2\models;
 
-use mazpaijo\attachmentsAws\ModuleTrait;
+use mazpaijo\attachmentsAws2\ModuleTrait;
 use yii\base\Model;
 use yii\helpers\ArrayHelper;
 use yii\web\UploadedFile;

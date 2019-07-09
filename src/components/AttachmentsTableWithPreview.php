@@ -1,10 +1,10 @@
 <?php
 
-namespace mazpaijo\attachmentsAws\components;
+namespace mazpaijo\attachmentsAws2\components;
 
 use himiklab\colorbox\Colorbox;
-use mazpaijo\attachmentsAws\behaviors\FileBehavior;
-use mazpaijo\attachmentsAws\ModuleTrait;
+use mazpaijo\attachmentsAws2\behaviors\FileBehavior;
+use mazpaijo\attachmentsAws2\ModuleTrait;
 use Yii;
 use yii\bootstrap\Widget;
 use yii\data\ArrayDataProvider;
@@ -12,7 +12,7 @@ use yii\db\ActiveRecord;
 use yii\grid\GridView;
 use yii\helpers\Html;
 use yii\helpers\Url;
-use mazpaijo\attachmentsAws\models\File;
+use mazpaijo\attachmentsAws2\models\File;
 use app\helpers\ActiveUser;
 /**
  * Created by PhpStorm.

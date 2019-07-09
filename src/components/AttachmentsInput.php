@@ -1,10 +1,10 @@
 <?php
 
-namespace mazpaijo\attachmentsAws\components;
+namespace mazpaijo\attachmentsAws2\components;
 
 use kartik\file\FileInput;
-use mazpaijo\attachmentsAws\models\UploadForm;
-use mazpaijo\attachmentsAws\ModuleTrait;
+use mazpaijo\attachmentsAws2\models\UploadForm;
+use mazpaijo\attachmentsAws2\ModuleTrait;
 use yii\base\InvalidConfigException;
 use yii\bootstrap\Widget;
 use yii\helpers\FileHelper;

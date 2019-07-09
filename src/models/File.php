@@ -1,8 +1,8 @@
 <?php
 
-namespace mazpaijo\attachmentsAws\models;
+namespace mazpaijo\attachmentsAws2\models;
 
-use mazpaijo\attachmentsAws\ModuleTrait;
+use mazpaijo\attachmentsAws2\ModuleTrait;
 use Yii;
 use yii\db\ActiveRecord;
 use yii\helpers\Url;
@@ -15,7 +15,6 @@ use yii\helpers\Url;
  * @property string $model
  * @property integer $itemId
  * @property integer $userId
- * @property integer $terminal_id
  * @property integer $created_by
  * @property string $hash
  * @property integer $size
@@ -50,8 +49,8 @@ class File extends ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'model', 'itemId','userId','terminal_id','created_by', 'hash', 'size', 'type', 'mime'], 'required'],
-            [['itemId','userId','terminal_id','created_by', 'size'], 'integer'],
+            [['name', 'model', 'itemId','userId','created_by', 'hash', 'size', 'type', 'mime'], 'required'],
+            [['itemId','userId','created_by', 'size'], 'integer'],
             [['name', 'model', 'hash', 'type', 'mime'], 'string', 'max' => 255]
         ];
     }
@@ -67,7 +66,6 @@ class File extends ActiveRecord
             'model' => 'Model',
             'itemId' => 'Item ID',
             'userId' => 'User ID',
-            'terminal_id' => 'Terminal ID',
             'created_by' => 'Created By',
             'hash' => 'Hash',
             'size' => 'Size',

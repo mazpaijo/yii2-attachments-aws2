@@ -1,7 +1,7 @@
 <?php
-namespace mazpaijo\attachmentsAws;
+namespace mazpaijo\attachmentsAws2;
 
-use mazpaijo\attachmentsAws\models\File;
+use mazpaijo\attachmentsAws2\models\File;
 use yii\base\Exception;
 use yii\helpers\ArrayHelper;
 use yii\helpers\FileHelper;
@@ -9,7 +9,7 @@ use yii\i18n\PhpMessageSource;
 
 class Module extends \yii\base\Module
 {
-    public $controllerNamespace = 'mazpaijo\attachmentsAws\controllers';
+    public $controllerNamespace = 'mazpaijo\attachmentsAws2\controllers';
 
     public $storePath = '@app/uploads/store';
 
@@ -37,7 +37,7 @@ class Module extends \yii\base\Module
         \Yii::$app->i18n->translations['mazpaijo/*'] = [
             'class' => PhpMessageSource::className(),
             'sourceLanguage' => 'en',
-            'basePath' => '@vendor/mazpaijo/yii2-attachments-aws/src/messages',
+            'basePath' => '@vendor/mazpaijo/yii2-attachments-aws2/src/messages',
             'fileMap' => [
                 'mazpaijo/attachments-aws' => 'attachments-aws.php'
             ],
@@ -145,7 +145,6 @@ class Module extends \yii\base\Module
         $file->name = pathinfo($filePath, PATHINFO_FILENAME);
         $file->model = $this->getShortClass($owner);
         $file->itemId = $owner->id;
-        $file->terminal_id = $owner->terminal_id;
         $file->userId = (\Yii::$app->user->isGuest) ? "" : \Yii::$app->user->identity->id;
         $file->created_by = (\Yii::$app->user->isGuest) ? "" : \Yii::$app->user->identity->id;
         $file->hash = $fileHash;
@@ -180,7 +179,6 @@ class Module extends \yii\base\Module
         $file->name = pathinfo($filePath, PATHINFO_FILENAME);
         $file->model = $this->getShortClass($owner);
         $file->itemId = $owner->id;
-        $file->terminal_id = $owner->terminal_id;
         $file->userId = (\Yii::$app->user->isGuest) ? "" : \Yii::$app->user->identity->id;
         $file->created_by = (\Yii::$app->user->isGuest) ? "" : \Yii::$app->user->identity->id;
         $file->hash = $fileHash;
